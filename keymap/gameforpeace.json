@@ -212,7 +212,8 @@
 				"x": 0.92,
 				"y": 0.4
 			},
-			"switchMap": false
+			"switchMap": false,
+			"resetMap": true
 		},
 		{
 			"comment": "救人",

@@ -11,7 +11,7 @@ cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 # QC Custom config
 set(QC_PROJECT_NAME "QtScrcpy")
 # Read version numbers from file
-file(STRINGS ${CMAKE_CURRENT_SOURCE_DIR}/appversion QC_FILE_VERSION)
+file(STRINGS ${CMAKE_CURRENT_SOURCE_DIR}/version QC_FILE_VERSION)
 set(QC_PROJECT_VERSION ${QC_FILE_VERSION})
 
 # Project declare
@@ -48,18 +48,21 @@ if (MSVC)
     endif()
 
     message(STATUS "[${PROJECT_NAME}] Set Warnings as error")
+    message("3.1")
     # warning level 3 and all warnings as errors
     add_compile_options(/W3 /WX /wd4566)
-
+    message("3.2")
     # avoid warning C4819
     add_compile_options(-source-charset:utf-8)
+    message("3.3")
     #add_compile_options(/utf-8)
 
     # ensure we use minimal "windows.h" lib without the crazy min max macros
     add_compile_definitions(NOMINMAX WIN32_LEAN_AND_MEAN)
-    
+    message("3.4")
     # disable SAFESEH - avoid "LNK2026: module unsafe"(Qt5.15&&vs2019)     
     add_link_options(/SAFESEH:NO)
+    message("3.5")
 endif()
 
 if (NOT MSVC)
@@ -74,13 +77,15 @@ endif()
 #
 # Qt
 #
-
+message("3.6")
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-
+message("3.7")
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Network Multimedia REQUIRED)
+message("3.8")
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Network Multimedia REQUIRED)
+message("3.9")
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     find_package(QT NAMES Qt6 Qt5 COMPONENTS X11Extras REQUIRED)
     find_package(Qt${QT_VERSION_MAJOR} COMPONENTS X11Extras REQUIRED)
@@ -220,8 +225,18 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
     set(QC_RUNTIME_TYPE WIN32)
 endif()
 
+# 设置策略CMP0091为NEW，新策略
+if (POLICY CMP0091)
+  cmake_policy(SET CMP0091 NEW)
+endif (POLICY CMP0091)
 
+# 添加一个exe
 add_executable(${PROJECT_NAME} ${QC_RUNTIME_TYPE} ${QC_PROJECT_SOURCES})
+
+# 设置MT/MTd
+set_property(TARGET ${PROJECT_NAME} PROPERTY
+  MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+
 
 #
 # Internal include path (todo: remove this, use absolute path include)
@@ -328,7 +343,7 @@ endif()
 #
 
 add_subdirectory(QtScrcpyCore)
-
+message(17)
 # Qt
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
@@ -336,3 +351,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Multimedia
     QtScrcpyCore
 )
+message(18)
