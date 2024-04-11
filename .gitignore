@@ -1,4 +1,3 @@
-/output
 *.user
 /QtScrcpy/*.user
 /server/.gradle
