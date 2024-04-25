@@ -763,9 +763,11 @@ void VideoForm::closeEvent(QCloseEvent *event)
     }
     Config::getInstance().setRect(device->getSerial(), geometry());
     device->disconnectDevice();
+
     QString posTip = QString("关闭连接");
     qInfo() << posTip.toStdString().c_str();
     QGuiApplication::restoreOverrideCursor();
+    grabCursor(false);
 }
 
 void VideoForm::dragEnterEvent(QDragEnterEvent *event)
