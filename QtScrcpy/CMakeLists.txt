@@ -48,27 +48,27 @@ if (MSVC)
     endif()
 
     message(STATUS "[${PROJECT_NAME}] Set Warnings as error")
-    message("3.1")
+
     # warning level 3 and all warnings as errors
     add_compile_options(/W3 /WX /wd4566)
-    message("3.2")
+
     # avoid warning C4819
     add_compile_options(-source-charset:utf-8)
-    message("3.3")
+
     #add_compile_options(/utf-8)
 
     # ensure we use minimal "windows.h" lib without the crazy min max macros
     add_compile_definitions(NOMINMAX WIN32_LEAN_AND_MEAN)
-    message("3.4")
+
     # disable SAFESEH - avoid "LNK2026: module unsafe"(Qt5.15&&vs2019)     
     add_link_options(/SAFESEH:NO)
-    message("3.5")
+
 endif()
 
 if (NOT MSVC)
     message(STATUS "[${PROJECT_NAME}] Set warnings as error")
     # lots of warnings and all warnings as errors
-    add_compile_options(-Wall -Wextra -pedantic -Werror)
+    add_compile_options(-Wall -Wextra -pedantic)
 
     # disable some warning
     add_compile_options(-Wno-nested-anon-types -Wno-c++17-extensions -Wno-overloaded-virtual)
@@ -77,15 +77,15 @@ endif()
 #
 # Qt
 #
-message("3.6")
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-message("3.7")
+
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Network Multimedia REQUIRED)
-message("3.8")
+
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Network Multimedia REQUIRED)
-message("3.9")
+
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     find_package(QT NAMES Qt6 Qt5 COMPONENTS X11Extras REQUIRED)
     find_package(Qt${QT_VERSION_MAJOR} COMPONENTS X11Extras REQUIRED)
@@ -192,9 +192,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
         VERSION_PATCH=${PROJECT_VERSION_PATCH}
         VERSION_RC_STR="${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
     )
-    set(QC_PLANTFORM_SOURCES
-        "${CMAKE_CURRENT_SOURCE_DIR}/res/${PROJECT_NAME}.rc"
-    )
+#    set(QC_PLANTFORM_SOURCES
+#        "${CMAKE_CURRENT_SOURCE_DIR}/res/${PROJECT_NAME}.rc"
+#    )
 endif()
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     # Step 1. add icns to source file, for MACOSX_PACKAGE_LOCATION copy
@@ -343,7 +343,7 @@ endif()
 #
 
 add_subdirectory(QtScrcpyCore)
-message(17)
+
 # Qt
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
@@ -351,4 +351,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Multimedia
     QtScrcpyCore
 )
-message(18)
+
