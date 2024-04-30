@@ -120,6 +120,13 @@ set(QC_AUDIO_SOURCES
 )
 source_group(audio FILES ${QC_AUDIO_SOURCES})
 
+# vmouse
+set(QC_VMOUSE_SOURCES
+    vmouse/vmouseControl.h
+    vmouse/vmouseControl.cpp
+)
+source_group(vmouse FILES ${QC_VMOUSE_SOURCES})
+
 # ui
 set(QC_UI_SOURCES
     ui/toolform.h
@@ -216,6 +223,7 @@ set(QC_PROJECT_SOURCES
     ${QC_GROUP_CONTROLLER}
     ${QC_PLANTFORM_SOURCES}
     ${QC_AUDIO_SOURCES}
+    ${QC_VMOUSE_SOURCES}
 )
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
@@ -273,6 +281,8 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/sndcpy/sndcpy.bat" "${QSC_BIN_OUTPUT_PATH}"
         COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/sndcpy/sndcpy.apk" "${QSC_BIN_OUTPUT_PATH}"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/virtualMouse/vmouse.bat" "${QSC_BIN_OUTPUT_PATH}"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/virtualMouse/vmouse.apk" "${QSC_BIN_OUTPUT_PATH}"
     )
 endif()
 
