@@ -1021,6 +1021,20 @@
            </layout>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="installVmouse">
+           <property name="text">
+            <string>install vmouse</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="connectVmouse">
+           <property name="text">
+            <string>connect vmouse</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
