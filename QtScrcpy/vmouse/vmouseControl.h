@@ -18,6 +18,7 @@ public:
     bool start(const QString& serial, int port);
     void stop();
     void installonly(const QString& serial, int port);
+    void sendMsg(char content);
     QTcpSocket *getVMouseSocket();
 
 private:
@@ -27,11 +28,11 @@ private:
 
 signals:
     void connectTo(int port);
+    void sendCtrMsg(char msg);
 
 private:
-    QPointer<QIODevice> m_outputDevice;
     QThread m_workerThread;
-    QProcess m_sndcpy;
+    QProcess m_vmouse;
     QVector<char> m_buffer;
     bool m_running = false;
 };

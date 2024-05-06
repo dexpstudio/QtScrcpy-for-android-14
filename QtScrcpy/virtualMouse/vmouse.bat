@@ -12,9 +12,9 @@ if not "%2"=="" (
     set VMOUSE_PORT=%2
 )
 
-echo Waiting for device %1...
+echo Waiting for device %serial...
 %ADB% %serial% wait-for-device || goto :error
-echo Find device %1
+echo Find device %serial
 
 for /f "delims=" %%i in ('%ADB% %serial% shell pm path com.chetbox.mousecursor') do set vmouse_installed=%%i
 if "%vmouse_installed%"=="" (
@@ -24,8 +24,10 @@ if "%vmouse_installed%"=="" (
     echo Install %VMOUSE_APK% success
 )
 
-echo Forward port %VMOUSE_PORT%...
-%ADB% %serial% forward tcp:%VMOUSE_PORT% localabstract:sndcpy || goto :error
+echo Forward port %serial% %VMOUSE_PORT% ...
+%ADB% %serial% forward tcp:%VMOUSE_PORT% tcp:%VMOUSE_PORT% || goto :error
+
+%ADB% %serial% shell am force-stop com.chetbox.mousecursor
 
 echo Start %VMOUSE_APK%...
 %ADB% %serial% shell am start com.chetbox.mousecursor/.MainActivity || goto :error

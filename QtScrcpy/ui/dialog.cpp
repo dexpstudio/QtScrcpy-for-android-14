@@ -743,6 +743,45 @@ void Dialog::on_installSndcpyBtn_clicked()
     m_audioOutput.installonly(ui->serialBox->currentText(), 28200);
 }
 
+void Dialog::on_connectVmouseBtn_clicked()
+{
+    if (ui->serialBox->count() == 0) {
+        qWarning() << "No device is connected!";
+        return;
+    }
+
+    m_vmouseCtr.start(ui->serialBox->currentText(), 9999);
+}
+
+void Dialog::on_installVmouseBtn_clicked()
+{
+    if (ui->serialBox->count() == 0) {
+        qWarning() << "No device is connected!";
+        return;
+    }
+    m_vmouseCtr.installonly(ui->serialBox->currentText(), 9999);
+}
+
+void Dialog::on_wBtn_clicked()
+{
+    m_vmouseCtr.sendMsg('0');
+}
+
+void Dialog::on_sBtn_clicked()
+{
+    m_vmouseCtr.sendMsg('1');
+}
+
+void Dialog::on_aBtn_clicked()
+{
+    m_vmouseCtr.sendMsg('2');
+}
+
+void Dialog::on_dBtn_clicked()
+{
+    m_vmouseCtr.sendMsg('3');
+}
+
 void Dialog::on_autoUpdatecheckBox_toggled(bool checked)
 {
     if (checked) {

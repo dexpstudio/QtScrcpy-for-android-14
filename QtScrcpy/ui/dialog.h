@@ -13,6 +13,7 @@
 #include "adbprocess.h"
 #include "../QtScrcpyCore/include/QtScrcpyCore.h"
 #include "audio/audiooutput.h"
+#include "vmouse/vmouseControl.h"
 
 namespace Ui
 {
@@ -60,10 +61,16 @@ private slots:
     void on_serialBox_currentIndexChanged(const QString &arg1);
 
     void on_startAudioBtn_clicked();
-
     void on_stopAudioBtn_clicked();
-
     void on_installSndcpyBtn_clicked();
+
+    void on_connectVmouseBtn_clicked();
+    void on_installVmouseBtn_clicked();
+
+    void on_wBtn_clicked();
+    void on_sBtn_clicked();
+    void on_aBtn_clicked();
+    void on_dBtn_clicked();
 
     void on_autoUpdatecheckBox_toggled(bool checked);
 
@@ -90,6 +97,7 @@ private:
     QAction *m_showWindow;
     QAction *m_quit;
     AudioOutput m_audioOutput;
+    VMouseControl m_vmouseCtr;
     QTimer m_autoUpdatetimer;
 };
 
