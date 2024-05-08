@@ -534,6 +534,11 @@ void VideoForm::grabCursor(bool grab)
     MouseTap::getInstance()->enableMouseEventTap(rc, grab);
 }
 
+void VideoForm::setVMouse(bool state)
+{
+
+}
+
 void VideoForm::onFrame(int width, int height, uint8_t *dataY, uint8_t *dataU, uint8_t *dataV, int linesizeY, int linesizeU, int linesizeV)
 {
     updateRender(width, height, dataY, dataU, dataV, linesizeY, linesizeU, linesizeV);
@@ -582,8 +587,11 @@ void VideoForm::mousePressEvent(QMouseEvent *event)
         if (event->button() == Qt::LeftButton) {
             qreal x = event->localPos().x() / m_videoWidget->size().width();
             qreal y = event->localPos().y() / m_videoWidget->size().height();
-            QString posTip = QString(R"("pos": {"x": %1, "y": %2})").arg(x).arg(y);
+            QString posTip = QString(R"("pos": {"x": %1, "y": %2})").arg(event->localPos().x()).arg(event->localPos().y());
             qInfo() << posTip.toStdString().c_str();
+            posTip = QString(R"("pos": {"x": %1, "y": %2})").arg(x).arg(y);
+            qInfo() << posTip.toStdString().c_str();
+            //sendMsg(VMouseControl::SHOW,event->localPos().x(),event->localPos().y());
         }
     } else {
         if (event->button() == Qt::LeftButton) {

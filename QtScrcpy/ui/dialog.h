@@ -13,7 +13,6 @@
 #include "adbprocess.h"
 #include "../QtScrcpyCore/include/QtScrcpyCore.h"
 #include "audio/audiooutput.h"
-#include "vmouse/vmouseControl.h"
 
 namespace Ui
 {
@@ -97,7 +96,6 @@ private:
     QAction *m_showWindow;
     QAction *m_quit;
     AudioOutput m_audioOutput;
-    VMouseControl m_vmouseCtr;
     QTimer m_autoUpdatetimer;
 };
 

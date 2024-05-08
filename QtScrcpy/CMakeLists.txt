@@ -120,13 +120,6 @@ set(QC_AUDIO_SOURCES
 )
 source_group(audio FILES ${QC_AUDIO_SOURCES})
 
-# vmouse
-set(QC_VMOUSE_SOURCES
-    vmouse/vmouseControl.h
-    vmouse/vmouseControl.cpp
-)
-source_group(vmouse FILES ${QC_VMOUSE_SOURCES})
-
 # ui
 set(QC_UI_SOURCES
     ui/toolform.h
@@ -223,7 +216,6 @@ set(QC_PROJECT_SOURCES
     ${QC_GROUP_CONTROLLER}
     ${QC_PLANTFORM_SOURCES}
     ${QC_AUDIO_SOURCES}
-    ${QC_VMOUSE_SOURCES}
 )
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
