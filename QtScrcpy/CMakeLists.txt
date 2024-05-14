@@ -1,4 +1,4 @@
-# For VS2019 and Xcode 12+ support.
+﻿# For VS2019 and Xcode 12+ support.
 cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
 #
@@ -192,9 +192,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
         VERSION_PATCH=${PROJECT_VERSION_PATCH}
         VERSION_RC_STR="${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
     )
-#    set(QC_PLANTFORM_SOURCES
-#        "${CMAKE_CURRENT_SOURCE_DIR}/res/${PROJECT_NAME}.rc"
-#    )
+    set(QC_PLANTFORM_SOURCES
+        "${CMAKE_CURRENT_SOURCE_DIR}/res/${PROJECT_NAME}.rc"
+    )
 endif()
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     # Step 1. add icns to source file, for MACOSX_PACKAGE_LOCATION copy
