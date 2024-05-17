@@ -35,6 +35,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # default RelWithDebInfo
 if(NOT CMAKE_BUILD_TYPE)
+    message("55555555555555555555555555555555555")
     set(CMAKE_BUILD_TYPE RelWithDebInfo)
 endif()
 message(STATUS "[${PROJECT_NAME}] BUILD_TYPE:${CMAKE_BUILD_TYPE}")
@@ -260,6 +261,9 @@ message(STATUS "multi config:" QC_IS_MUTIL_CONFIG)
 set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../output/${QC_CPU_ARCH}/${CMAKE_BUILD_TYPE}/$<0:>"
 )
+
+message("----------------------------")
+message(${CMAKE_BUILD_TYPE})
 
 #
 # plantform deps
