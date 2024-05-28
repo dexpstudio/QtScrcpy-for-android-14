@@ -1,0 +1,583 @@
+{
+	"switchKey": "Key_QuoteLeft",
+	"mouseMoveMap": {
+		"startPos": {
+			"x": 0.64,
+			"y": 0.75
+		},
+		"speedRatioX": 1,
+		"speedRatioY": 1,
+		"smallEyes": {
+			"comment": "小眼睛",
+			"type": "KMT_CLICK",
+			"key": "Key_Alt",
+			"pos": {
+				"x": 0.770876, 
+				"y": 0.309255
+			},
+			"switchMap": false
+		},
+		"speedRatio": 10
+	},
+	"keyMapNodes": [
+		{
+			"comment": "方向盘",
+			"type": "KMT_STEER_WHEEL",
+			"centerPos": {
+				"x": 0.16,
+				"y": 0.75
+			},
+			"leftOffset": 0.1,
+			"rightOffset": 0.1,
+			"upOffset": 0.27,
+			"downOffset": 0.2,
+			"leftKey": "Key_A",
+			"rightKey": "Key_D",
+			"upKey": "Key_W",
+			"downKey": "Key_S"
+		},
+		{
+			"comment": "左探头",
+			"type": "KMT_CLICK",
+			"key": "Key_Q",
+			"pos": {
+				"x": 0.164969,
+			 	"y": 0.354402
+			},
+			"switchMap": false,
+			"resetMap":true
+		},
+				{
+			"comment": "右探头",
+			"type": "KMT_CLICK",
+			"key": "Key_E",
+			"pos": {
+				"x": 0.2,
+				"y": 0.35
+			},
+			"switchMap": false,
+			"resetMap":true
+		},
+		{
+			"comment": "自动跑",
+			"type": "KMT_CLICK",
+			"key": "Key_Equal",
+			"pos": {
+				"x": 0.84,
+				"y": 0.26
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "上游",
+			"type": "KMT_CLICK",
+			"key": "Key_Up",
+			"pos": {
+				"x": 0.839583,
+				"y": 0.584296
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "下游",
+			"type": "KMT_CLICK",
+			"key": "Key_Down",
+			"pos": {
+				"x": 0.844792,
+				"y": 0.831409
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "跳",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_Space",
+			"resetMap":true,
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+
+						"x": 0.96,
+						"y": 0.7
+					}
+				},
+				{
+					"delay": 10,
+					"pos": {
+						"x": 0.766667,
+						"y": 0.538106
+					}
+				}
+			]
+		},
+		{
+			"comment": "地图",
+			"type": "KMT_CLICK",
+			"key": "Key_M",
+			"pos": {
+				"x": 0.95,
+				"y": 0.04
+			},
+			"switchMap": false,
+			"resetMap":true
+		},
+		{
+			"comment": "背包",
+			"type": "KMT_CLICK",
+			"key": "Key_Tab",
+			"pos": {
+				"x": 0.0906314, 
+				"y": 0.900677
+			},
+			"switchMap": false,
+			"resetMap":true
+		},
+		{
+			"comment": "视角",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_V",
+			"resetMap":true,
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.21, 
+						"y": 0.93
+					}
+				},
+				{
+					"delay": 10,
+					"pos": {
+						"x": 0.665172,
+						"y": 0.523179
+					}
+				}
+			]
+		},
+		{
+			"comment": "趴",
+			"type": "KMT_CLICK",
+			"key": "Key_Z",
+			"pos": {
+				"x": 0.95,
+				"y": 0.9
+			},
+			"switchMap": false,
+			"resetMap":true
+		},
+		{
+			"comment": "蹲",
+			"type": "KMT_CLICK",
+			"key": "Key_C",
+			"pos": {
+				"x": 0.86,
+				"y": 0.92
+			},
+			"switchMap": false,
+			"resetMap":true
+		},
+		{
+			"comment": "换弹",
+			"type": "KMT_CLICK",
+			"key": "Key_R",
+			"pos": {
+				"x": 0.795,
+				"y": 0.93
+			},
+			"switchMap": false,
+			"resetMap":true
+		},
+		{
+			"comment": "捡东西1",
+			"type": "KMT_CLICK",
+			"key": "Key_F",
+			"pos": {
+				"x": 0.7,
+				"y": 0.34
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "捡东西2",
+			"type": "KMT_CLICK",
+			"key": "Key_G",
+			"pos": {
+				"x": 0.7,
+				"y": 0.44
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "捡东西3",
+			"type": "KMT_CLICK",
+			"key": "Key_H",
+			"pos": {
+				"x": 0.7,
+				"y": 0.54
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "换枪1/取消手雷",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_1",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.45,
+						"y": 0.9
+					}
+				},
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.22,
+						"y": 0.53
+					}
+				}
+			]
+		},
+		{
+			"comment": "换枪2/取消手雷",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_2",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.55,
+						"y": 0.9
+					}
+				},
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.22,
+						"y": 0.53
+					}
+				}
+			]
+		},
+		{
+			"comment": "手雷",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_3",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.67,
+						"y": 0.92
+					}
+				},
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.78,
+						"y": 0.93
+					}
+				},
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.22,
+						"y": 0.53
+					}
+				}
+			]
+		},
+		{
+			"comment": "快速打药",
+			"type": "KMT_CLICK",
+			"key": "Key_4",
+			"pos": {
+				"x": 0.348269, 
+				"y": 0.941309
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "救人",
+			"type": "KMT_CLICK",
+			"key": "Key_5",
+			"pos": {
+				"x": 0.501018, 
+				"y": 0.602709
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "抱人",
+			"type": "KMT_CLICK",
+			"key": "Key_6",
+			"pos": {
+				"x": 0.5, 
+				"y": 0.732102
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "手枪",
+			"type": "KMT_CLICK",
+			"key": "Key_7",
+			"pos": {
+				"x": 0.590631, 
+				"y": 0.810384
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "车加速",
+			"type": "KMT_CLICK",
+			"key": "Key_Shift",
+			"pos": {
+				"x": 0.818939,
+				"y": 0.766779
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "跳伞",
+			"type": "KMT_CLICK",
+			"key": "Key_Control",
+			"pos": {
+				"x": 0.185417,
+				"y": 0.418014
+			},
+			"switchMap": false,
+			"resetMap":true
+		},
+		{
+			"comment": "投掷物菜单",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_F2",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.65,
+						"y": 0.85
+					}
+				},
+				{
+					"delay": 50,
+					"pos": {
+						"x": 0.65,
+						"y": 0.81
+					}
+				}
+			]
+		},
+		{
+			"comment": "投掷物菜单2",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_F3",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.65,
+						"y": 0.85
+					}
+				},
+				{
+					"delay": 50,
+					"pos": {
+						"x": 0.65,
+						"y": 0.75
+					}
+				}
+			]
+		},
+		{
+			"comment": "药物菜单",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_F1",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.34,
+						"y": 0.88
+					}
+				},
+				{
+					"delay": 50,
+					"pos": {
+						"x": 0.34,
+						"y": 0.83
+					}
+				}
+			]
+		},
+		{
+			"comment": "瞄准镜1",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_F11",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.95,
+						"y": 0.41
+					}
+				},
+				{
+					"delay": 50,
+					"pos": {
+						"x": 0.84,
+						"y": 0.41
+					}
+				}
+			]
+		},
+		{
+			"comment": "瞄准镜2",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_F12",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.95,
+						"y": 0.41
+					}
+				},
+				{
+					"delay": 50,
+					"pos": {
+						"x": 0.89,
+						"y": 0.42
+					}
+				}
+			]
+		},
+		{
+			"comment": "物品",
+			"type": "KMT_CLICK",
+			"key": "Key_Y",
+			"pos": {
+				"x": 0.751527, 
+				"y": 0.252822
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "标点",
+			"type": "KMT_CLICK",
+			"key": "Key_F4",
+			"pos": {
+				"x": 0.90,
+				"y": 0.33
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "开关门",
+			"type": "KMT_CLICK",
+			"key": "Key_X",
+			"pos": {
+				"x": 0.622917, 
+				"y": 0.193995
+			},
+			"switchMap": false,
+			"resetMap":true
+		},
+		{
+			"comment": "舔包",
+			"type": "KMT_CLICK", 
+			"key": "Key_T",
+			"pos": {
+				"x": 0.710794, 
+				"y": 0.255079
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "点射/开火切换",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_B",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+						"x": 0.54,
+						"y": 0.81
+					}
+				},
+				{
+					"delay": 10,
+					"pos": {
+						"x": 0.42,
+						"y": 0.8
+					}
+				},
+				{
+					"delay": 10,
+					"pos": {
+						"x": 0.7571,
+						"y": 0.85596
+					}
+				}
+			]
+		},
+		{
+			"comment": "开枪",
+			"type": "KMT_CLICK",
+			"key": "LeftButton",
+			"pos": {
+				"x": 0.86,
+				"y": 0.72
+			},
+			"switchMap": false
+		},
+		{
+			"comment": "开镜",
+			"type": "KMT_CLICK",
+			"key": "RightButton",
+			"pos": {
+				"x": 0.96,
+				"y": 0.52
+			},
+			"switchMap": false
+		},
+        {
+			"comment": "龙腾战车",
+			"type": "KMT_CLICK_MULTI",
+			"key": "Key_F8",
+			"clickNodes": [
+				{
+					"delay": 0,
+					"pos": {
+
+						"x": 0.090625,
+						"y": 0.907621
+					}
+				},
+				{
+					"delay": 200,
+					"pos": {
+						"x": 0.877083,
+						"y": 0.147806
+					}
+				},
+				{
+					"delay": 200,
+					"pos": {
+						"x": 0.894792,
+						"y": 0.247113
+					}
+				},
+				{
+					"delay": 200,
+					"pos": {
+						"x": 0.090625,
+						"y": 0.907621
+					}
+				}
+			]
+		}
+	]
+}
